@@ -1,0 +1,6 @@
+# Ignore 
+# XCode ignore swift files 
+
+Pods/
+
+*.xcworkspace
