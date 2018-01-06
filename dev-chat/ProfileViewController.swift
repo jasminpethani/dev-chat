@@ -19,7 +19,7 @@ class ProfileViewController: FormViewController {
     // TODO: profile upload photo
     // status of current profile
     
-    @IBOutlet weak var profileImage: RoundImageView!
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userStatus: UILabel! // online/offline
     
     override func viewDidLoad() {

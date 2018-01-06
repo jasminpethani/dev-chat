@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func setApplicationRootController() {
-        if AuthenticateService.manager.currentUser != nil {
+        if FireDatabaseService.manager.currentUser != nil {
             if let rootController = UIStoryboard(name: "Chat", bundle: nil).instantiateInitialViewController() {
                 window?.rootViewController = rootController
             }

@@ -173,7 +173,7 @@ class RegistrationViewController: FormViewController {
         view.endEditing(true)
         let erros = form.validate()
         if erros.isEmpty {
-            AuthenticateService.manager.registerUser(model: user).then { (logggedIn) -> Void in
+            FireDatabaseService.manager.registerUser(model: user).then { (logggedIn) -> Void in
                 if logggedIn {
                     (UIApplication.shared.delegate as! AppDelegate).setApplicationRootController()
                 }

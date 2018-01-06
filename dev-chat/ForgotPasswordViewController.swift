@@ -40,7 +40,7 @@ class ForgotPasswordViewController: UIViewController {
         
         if isValidEmailAddress(emailAddressString: email) {
     
-           AuthenticateService.manager.forgotPassword(email: email)
+           FireDatabaseService.manager.forgotPassword(email: email)
                .then(on: DispatchQueue.main, execute: { doesSend -> Void in
                     if doesSend {
                          debugPrint("send to your mail \(email)")

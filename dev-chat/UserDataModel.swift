@@ -37,7 +37,7 @@ class UserDataModel {
      
      var isFriendOfCurrentUser: Bool {
           if !friends.isEmpty {
-               if let userId = AuthenticateService.manager.currentUser?.uid {
+               if let userId = FireDatabaseService.manager.currentUser?.uid {
                     return friends.contains(userId)
                }
           }
@@ -46,7 +46,7 @@ class UserDataModel {
      
      
      var isCurrentUser: Bool {
-          if let userId = AuthenticateService.manager.currentUser?.uid {
+          if let userId = FireDatabaseService.manager.currentUser?.uid {
                return self.userId == userId
           }
           return false

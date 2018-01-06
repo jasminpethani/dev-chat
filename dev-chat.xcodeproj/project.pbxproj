@@ -19,10 +19,9 @@
 		CB07E00D1FF7B2A400C585A2 /* dev_chatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07E00C1FF7B2A400C585A2 /* dev_chatUITests.swift */; };
 		CB07E01B1FF7B3AF00C585A2 /* LocalDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07E01A1FF7B3AF00C585A2 /* LocalDatabase.swift */; };
 		CB07E01E1FF7C05E00C585A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB07E01D1FF7BA3000C585A2 /* GoogleService-Info.plist */; };
-		CB726B901FF9516B00670EF6 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB726B8F1FF9516B00670EF6 /* RoundImageView.swift */; };
 		CB726B921FF9535500670EF6 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB726B911FF9535500670EF6 /* FriendCell.swift */; };
 		CB847ABE1FF8D71B003F2177 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB847ABD1FF8D71B003F2177 /* UserDataModel.swift */; };
-		CBBBF2D31FF81FAC0079E6F9 /* AuthenticateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBBF2D21FF81FAC0079E6F9 /* AuthenticateService.swift */; };
+		CBBBF2D31FF81FAC0079E6F9 /* FireDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBBF2D21FF81FAC0079E6F9 /* FireDatabaseService.swift */; };
 		CBBBF2D61FF834290079E6F9 /* FriendListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBBF2D51FF834290079E6F9 /* FriendListController.swift */; };
 		CBBBF2D81FF8343F0079E6F9 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBBF2D71FF8343F0079E6F9 /* ChatViewController.swift */; };
 		CBBBF2DB1FF8384E0079E6F9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBBF2DA1FF8384E0079E6F9 /* ProfileViewController.swift */; };
@@ -30,7 +29,8 @@
 		CBBFE1AA1FF7C4F900D362A0 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFE1A91FF7C4F900D362A0 /* RegistrationViewController.swift */; };
 		CBBFE1AC1FF7C5C600D362A0 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFE1AB1FF7C5C600D362A0 /* ForgotPasswordViewController.swift */; };
 		CBCCCB621FFFF91100C9A6E2 /* OtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCCCB611FFFF91100C9A6E2 /* OtherCell.swift */; };
-		CBCCCB641FFFFD8500C9A6E2 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCCCB631FFFFD8500C9A6E2 /* UserService.swift */; };
+		CBFBF0A1200134DF00335C00 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFBF0A0200134DF00335C00 /* Constants.swift */; };
+		CBFBF0A32001410400335C00 /* FriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFBF0A22001410400335C00 /* FriendRequest.swift */; };
 		CBFE01791FF8E7EC0018EA9F /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBFE01771FF8E59B0018EA9F /* Chat.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -74,10 +74,9 @@
 		CB07E00E1FF7B2A400C585A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB07E01A1FF7B3AF00C585A2 /* LocalDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabase.swift; sourceTree = "<group>"; };
 		CB07E01D1FF7BA3000C585A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CB726B8F1FF9516B00670EF6 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		CB726B911FF9535500670EF6 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		CB847ABD1FF8D71B003F2177 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
-		CBBBF2D21FF81FAC0079E6F9 /* AuthenticateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateService.swift; sourceTree = "<group>"; };
+		CBBBF2D21FF81FAC0079E6F9 /* FireDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDatabaseService.swift; sourceTree = "<group>"; };
 		CBBBF2D51FF834290079E6F9 /* FriendListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListController.swift; sourceTree = "<group>"; };
 		CBBBF2D71FF8343F0079E6F9 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		CBBBF2DA1FF8384E0079E6F9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +84,8 @@
 		CBBFE1A91FF7C4F900D362A0 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		CBBFE1AB1FF7C5C600D362A0 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		CBCCCB611FFFF91100C9A6E2 /* OtherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCell.swift; sourceTree = "<group>"; };
-		CBCCCB631FFFFD8500C9A6E2 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		CBFBF0A0200134DF00335C00 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CBFBF0A22001410400335C00 /* FriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequest.swift; sourceTree = "<group>"; };
 		CBFE01771FF8E59B0018EA9F /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Chat.storyboard; path = "/Users/jasminpethani/Documents/Projects/iOS/dev-chat/dev-chat/Other Resources/Chat.storyboard"; sourceTree = "<absolute>"; };
 		D3A5D208F8F33D5EAEFC01A4 /* Pods_dev_chatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dev_chatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80AB940B083410DE819B7FF /* Pods-dev-chatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dev-chatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dev-chatTests/Pods-dev-chatTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -197,11 +197,11 @@
 			isa = PBXGroup;
 			children = (
 				CB07E01A1FF7B3AF00C585A2 /* LocalDatabase.swift */,
-				CBBBF2D21FF81FAC0079E6F9 /* AuthenticateService.swift */,
-				CB726B8F1FF9516B00670EF6 /* RoundImageView.swift */,
+				CBBBF2D21FF81FAC0079E6F9 /* FireDatabaseService.swift */,
 				CB726B911FF9535500670EF6 /* FriendCell.swift */,
 				CBCCCB611FFFF91100C9A6E2 /* OtherCell.swift */,
-				CBCCCB631FFFFD8500C9A6E2 /* UserService.swift */,
+				CBFBF0A0200134DF00335C00 /* Constants.swift */,
+				CBFBF0A22001410400335C00 /* FriendRequest.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -530,13 +530,13 @@
 				CBCCCB621FFFF91100C9A6E2 /* OtherCell.swift in Sources */,
 				CBBBF2DB1FF8384E0079E6F9 /* ProfileViewController.swift in Sources */,
 				CBBFE1AC1FF7C5C600D362A0 /* ForgotPasswordViewController.swift in Sources */,
-				CBBBF2D31FF81FAC0079E6F9 /* AuthenticateService.swift in Sources */,
-				CB726B901FF9516B00670EF6 /* RoundImageView.swift in Sources */,
+				CBBBF2D31FF81FAC0079E6F9 /* FireDatabaseService.swift in Sources */,
+				CBFBF0A1200134DF00335C00 /* Constants.swift in Sources */,
 				CB07E01B1FF7B3AF00C585A2 /* LocalDatabase.swift in Sources */,
 				CBBBF2D61FF834290079E6F9 /* FriendListController.swift in Sources */,
 				CBBFE1A81FF7C4DD00D362A0 /* LoginViewController.swift in Sources */,
 				CBBBF2D81FF8343F0079E6F9 /* ChatViewController.swift in Sources */,
-				CBCCCB641FFFFD8500C9A6E2 /* UserService.swift in Sources */,
+				CBFBF0A32001410400335C00 /* FriendRequest.swift in Sources */,
 				CB847ABE1FF8D71B003F2177 /* UserDataModel.swift in Sources */,
 				CB726B921FF9535500670EF6 /* FriendCell.swift in Sources */,
 				CB07DFEA1FF7B2A400C585A2 /* AppDelegate.swift in Sources */,

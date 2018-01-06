@@ -129,7 +129,7 @@ class LoginViewController: FormViewController {
                guard let email = values["emailRow"] as? String,
                     let password = values["passwordRow"] as? String else { return }
                
-               AuthenticateService.manager.loginIntoFirebase(with: email, password: password).then(execute: { user -> Void in
+               FireDatabaseService.manager.loginIntoFirebase(with: email, password: password).then(execute: { user -> Void in
                     (UIApplication.shared.delegate as! AppDelegate).setApplicationRootController()
                }).catch(execute: { (error) in
                     fatalError(error.localizedDescription)

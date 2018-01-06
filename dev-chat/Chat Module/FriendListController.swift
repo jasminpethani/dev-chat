@@ -25,7 +25,7 @@ class FriendListController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
      
-        loadUsersFromFirebase()
+        fetchAllServerUsers()
      
         friendsTableView.separatorStyle = .none
         friendsTableView.estimatedRowHeight = 80
@@ -34,16 +34,39 @@ class FriendListController: UIViewController {
         segment.addTarget(self, action: #selector(FriendListController.segmentChanged(_:)), for: .valueChanged)
     }
      
-     fileprivate func loadUsersFromFirebase() {
-          UserService.manager.fetchAllUser { (users) in
+     fileprivate func fetchAllServerUsers() {
+          let group = DispatchGroup()
+          
+          group.enter()
+          FireDatabaseService.manager.fetchAllUser().then(execute: { (users) -> Void in
                if !users.isEmpty {
                     self.friends = users.filter {  return $0.isFriendOfCurrentUser   }
                     self.otherUsers = users.filter { return !$0.isCurrentUser &&  !$0.isFriendOfCurrentUser }
-                    
-                    DispatchQueue.main.async {
-                         self.segmentChanged(self.segment)
+                    group.leave()
+               }
+          }).catch (execute: { (error) -> Void in
+               fatalError(error.localizedDescription)
+          })
+          
+          
+          group.enter()
+          FireDatabaseService.manager.fetchFriendRequests(status: .sent).then(on: DispatchQueue.main, execute: { (friendRequests) -> Void in
+               for (i, o) in self.otherUsers.enumerated() where !self.otherUsers.isEmpty {
+                    for f in friendRequests where o.userId == f.toUser {
+                          _ = self.otherUsers.remove(at: i)
                     }
                }
+               
+               group.leave()
+          }).catch(execute: { e -> Void in
+               if case TypeError.snapNotAvail = e {
+                    group.leave()
+               }
+          })
+          
+          group.notify(queue: DispatchQueue.main) {
+               print("loading everthing")
+               self.segmentChanged(self.segment)
           }
      }
      
@@ -70,7 +93,7 @@ class FriendListController: UIViewController {
      
    
     @IBAction func logoutButton(_ sender: Any) {
-        AuthenticateService.manager.logOut().then(on: DispatchQueue.main, execute: { (isLoggout) -> Void in
+        FireDatabaseService.manager.logOut().then(on: DispatchQueue.main, execute: { (isLoggout) -> Void in
             debugPrint("isLoggedOut: \(isLoggout)")
             (UIApplication.shared.delegate as! AppDelegate).setApplicationRootController()
             
@@ -80,6 +103,8 @@ class FriendListController: UIViewController {
     }
 }
 
+
+// MARK:- TableView delegate and datasource methods
 
 extension FriendListController: UITableViewDataSource, UITableViewDelegate {
     
@@ -103,8 +128,6 @@ extension FriendListController: UITableViewDataSource, UITableViewDelegate {
     }
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-          //TODO: selected friend information should goto ChatViewController.swift
-          // senderID: send to destination
           if segment.selectedSegmentIndex == 0  {
                performSegue(withIdentifier: "@chats", sender: nil)
           }
@@ -116,11 +139,14 @@ extension FriendListController: UITableViewDataSource, UITableViewDelegate {
     
 }
 
+
+// MARK:- RequestDelegate delegate methods
+
 extension FriendListController: RequestDelegate {
      
      func sendFriendRequest(to: String) {
-          // TODO: update firebase with request outgoing and incoming
-          UserService.manager.updateRequest(to: to, status: RequestStatus.sent)
+          let request = FriendRequest(toUserId: to, status: .sent)
+          FireDatabaseService.manager.saveFriendRequest(request: request)
      }
 }
 
